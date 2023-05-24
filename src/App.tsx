@@ -2,6 +2,12 @@ import { useState } from "react";
 import { Button, Container, Grid, Paper, styled } from "@mui/material";
 import { DigitButton } from "./DigitButton";
 import { OperationButton } from "./OperationButton";
+import styled from 'styled-components';
+
+const StyledComponent = styled(`div`)(({ theme }) => ({
+  font-size: ${props => props.theme.typography.fontSize},
+  font-family: ${props => props.theme.typography.fontFamily}
+}));
 
 const OutputContainer = styled(`div`)(({ theme }) => ({
   width: "100%",
@@ -19,6 +25,10 @@ const CalculatorBase = styled(Paper)(({ theme }) => ({
 }));
 
 function App() {
+  const [prevValue, setPrevValue] = useState(null);
+  const [currentValue, setCurrentValue] = useState(0);
+  const [operator, setOperator] = useState(null);
+  const [overwrite, setOverwrite] = useState(false);
   /* !!!TODO
   Create a state for currentValue, prevValue, operation and overwrite
   */
@@ -97,15 +107,10 @@ function App() {
   // };
 
   return (
-    <Container maxWidth="sm">
-      {/* !!!TODO
-      Fill this with the calculator UI, use the components from the DigitButton and OperationButton
-      use CalculatorBase as the base component for the calculator and OutputContainer for the output display(should be at the top)
-      Use Grid Component for the layout
-      FIY: = should be its separate button
-      */}
-    </Container>
-  )
-}
+    <div>
+      {/* ... your JSX */}
+    </div>
+  );
+};
 
 export default App;
